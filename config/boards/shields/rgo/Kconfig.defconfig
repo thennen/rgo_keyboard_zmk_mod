@@ -1,0 +1,16 @@
+if SHIELD_RGO_LEFT
+
+config ZMK_KEYBOARD_NAME
+    default "rgo"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_RGO_LEFT || SHIELD_RGO_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+endif

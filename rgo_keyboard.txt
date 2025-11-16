@@ -1,0 +1,115 @@
+Title:  I hate that we live in a world where I am going to keep this keyboard.
+
+In my opinion this keyboard is obscenely overpriced, but is sadly the best split, low-profile, non-mechanical keyboard currently on the market.
+
+It is very thin and compact.  The compactness is accomplished by putting some important keys like print screen behind an Fn key, and using 
+using really small arrow keys (also pg up, pg down).  These features are a bummer, and I would prefer something closer to a standard tkl layout.
+
+I would also prefer to have a slightly "sculpted" low profile key shape because it provides better positioning feedback than the chiclet profile used here.
+However, I found that it's possible to adapt to the chiclet over time.
+
+It should have a tenting attachment included, because it's really not "ergo" without that.
+
+In this version they added a Bluetooth connection to the PC but still use a ugly, awkward, hardwired jumper cable to connect the left and right hand boards.  
+The outer insulation of the jumper cable is not even glued to the grommet as it enters the keyboard housing, so a light tug reveals the inner conductors and shielding.
+This was really poorly done -- even the open-source community has solutions for independently wireless boards.
+
+A dim backlight would have been nice, understanding that this would reduce battery life. There is plenty of space for a bigger battery inside the casing (they used a single 230 mAh).
+
+USB is a 6-pin power-only, so it has no data connection. So, no bluetooth, no keyboard input!
+One of the consequences is that you can't enter bios or boot menu without attaching a separate keyboard.
+The included usb cable is also power-only.
+
+It's really a shame that they give no support for separately remapping the two halves of the spacebar key.  I asked customer support about this, but they brushed me off.
+
+The macro column on the far left side of the board, which triggers key combinations internally, was a strange choice.
+Luckily they are mapped to Roya-[z,a,x,v,c] rather than ctrl-[z,a,x,v,c], so they can be remapped in software.
+The upper-right-most key being used to disable this macro column is a waste of a key in my opinion.
+
+The keyboard has a RGB LED which is supposed to remind you to take breaks.  But you need to install software to use it, which monitors your keyboard and mouse usage and I see no reason to trust it.
+The led also flickers very noticably, which is annoying.
+
+Overall, I think r-go should to redesign this board to justify its price tag.
+
+
+
+
+nothing about
+this keyboard justifies the price tag
+
+I guess they mainly sell to enterprise customers
+who want to show they are doing something for ergonomics
+and are not price sensitive
+
+
+
+
+
+
+You can open it up by pushing a sharp piece of plastic (like a plastic razor blade) into the seam
+there are three clips on each flat side, four clips on the jagged side
+I suggest starting with the flat sides
+
+magnets will come out of their positions because of weak glue.
+you can glue them back in, but be careful to get the polarity right so they attract instead of repel
+
+the left side has the control board (100 mm x 24 mm x 1 mm)
+(K900-BT LEFT V1.0 2023-06-25)
+1/8 inch holes
+chip is HS6620 308XSDM 1VL0102 , used in low-end smart watches
+which might be a knockoff of the nRF52x series EBT SoCs. 
+could say it is "inspired"
+(company HunterSun, changed name to OnMicro, all links broken, shady chinese manufacturer)
+some guy on the internet says "they only provide the SDK to companies that are willing to sign an NDA with them"
+https://archive.org/details/hs6620d-data-sheet-v30/mode/2up
+https://github.com/rbaron/HS6620D-smartwatch-reveng?tab=readme-ov-file could be useful
+there's about 2mm clearance from the pcb surface to the casing
+
+right half has the battery (TW 382035 3.7V 230 mAh 0.851Wh 2310) (46 mm x 22 mm x 1 mm ??  bullshit measurements) 
+there is plenty of space for a bigger battery, or for another one on the right side
+a passive PCB with only connectors.  two screw spots but only one screw in there..  really sloppy work
+all the right side rows and columns, along with battery +- are sent directly over the jumper cable with 20 wires!
+probably the cheapest way they could do it
+Some of these wires are shared with the right side keys, I'm guessing those are the "rows" which are scanned through
+The ones that are not connected are different "columns"
+I suppose some of the columns could be shared too, in principle
+
+ribbon cables (FFC) are the same size on each side
+plastic is 21 mm x ~0.3-0.5mm (blue stiffener)
+the left side uses all 20 pins, the right side uses 18
+conductor spacing is 1 mm
+ribbon connectors
+ZIF slider type, bottom contact
+might be compatible with Amphenol 1.00mm Pitch FFC/FPC - F52Q/F52R Series (but those say cable thickness 0.3 mm might be right but I don't have a micrometer)
+649-F52R-1A7H1-11020
+
+Wurth 68612014422
+
+Want to use the right half space bar for "enter"
+or maybe convert to fully wireless by replacing control board with nice!nanos
+
+Could there be a simple way to reroute right space wire to enter?
+
+nice!nano easily fits inside the case, but won't fit into the existing usb-c cutout because of the angle
+would need tiny a little usb-c extension, or make a new cutout, which would be necessary for the right half anyway.
+
+Inner dimensions of the case:
+flat part is 6mm deep
+21mm tall
+~150mm long left half (usable)
+~135mm long right half (usable)
+
+right half: ribbon 64mm-85mm from inside right edge
+left half: ?
+
+nice!nano 1/16 inch thick ~ 1.5mm
+usb connector is the thickest, 3mm
+stock pcb leaves 3.5mm gap underneath.  might be able to reuse the mounting holes.
+estimated 1.5 mm from stock pcb surface to bottom panel
+could use the mounting holes with 1.5mm spacers to buy some clearance
+leaves 2mm for the socket.. unless I mount the nice!nano upside down to buy another 1 mm.
+
+even mill-max "super low profile" is 4mm.  why does there need to be a plastic piece there? why not just the pins?
+
+I think I will just hand-wire this ... Then it can be removed.
+

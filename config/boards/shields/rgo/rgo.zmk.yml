@@ -1,0 +1,10 @@
+file_format: "1"
+id: rgo
+name: rgo
+type: shield
+url: https://github.com/thennen/rgo
+features:
+  - keys
+siblings:
+  - rgo_left
+  - rgo_right

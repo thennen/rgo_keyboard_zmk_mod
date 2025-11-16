@@ -1,0 +1,29 @@
+#include "rgo.dtsi"
+
+&kscan0 {
+        col-gpios
+            = <&pro_micro 21 (GPIO_PULL_DOWN)>  // Col 1
+            , <&pro_micro 20 (GPIO_PULL_DOWN)>  // Col 2
+            , <&pro_micro 19 (GPIO_PULL_DOWN)>  // Col 3
+            , <&pro_micro 18 (GPIO_PULL_DOWN)>  // Col 4
+            , <&pro_micro 15 (GPIO_PULL_DOWN)>  // Col 5
+            , <&pro_micro 14 (GPIO_PULL_DOWN)>  // Col 6
+            , <&pro_micro 16 (GPIO_PULL_DOWN)>  // Col 7
+            , <&pro_micro 10 (GPIO_PULL_DOWN)>  // Col 8
+            , <&pro_micro 9 (GPIO_PULL_DOWN)>  // Col 9
+            , <&pro_micro 8 (GPIO_PULL_DOWN)>  // Col 10
+            , <&pro_micro 7 (GPIO_PULL_DOWN)>  // Col 11
+            , <&gpio1 1 (GPIO_PULL_DOWN)>      // Col 12
+            ;
+
+        row-gpios
+            = <&gpio1 7 (GPIO_ACTIVE_HIGH)>     // Row 1
+            , <&pro_micro 6 (GPIO_ACTIVE_HIGH)> // Row 2
+            , <&pro_micro 5 (GPIO_ACTIVE_HIGH)> // Row 3
+            , <&pro_micro 4 (GPIO_ACTIVE_HIGH)> // Row 4
+            , <&pro_micro 3 (GPIO_ACTIVE_HIGH)> // Row 5
+            , <&pro_micro 2 (GPIO_ACTIVE_HIGH)> // Row 6
+            , <&pro_micro 0 (GPIO_ACTIVE_HIGH)> // Row 7
+            , <&pro_micro 1 (GPIO_ACTIVE_HIGH)> // Row 8
+            ;
+};
