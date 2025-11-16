@@ -1,0 +1,3 @@
+[submodule "zmk-unicode"]
+	path = zmk-unicode
+	url = https://github.com/urob/zmk-unicode
