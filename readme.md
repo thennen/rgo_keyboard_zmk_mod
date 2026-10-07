@@ -76,7 +76,7 @@ west build -d build/reset -p -b nice_nano_v2 -- -DSHIELD=settings_reset
 ```
 
 There are some config settings that get overwritten when zmk detects that you are trying to compile a split keyboard.  I think this is just detected by whether there are _left or _right suffixes on the config file names..
-The only way to override it is to use a command line option, so e.g. if you want to separately connect the two halves to the keyboard you have build with
+The only way to override it is to use a command line option, so e.g. if you want to separately connect the two halves to the keyboard you have to build with
 ```
 -DCONFIG_ZMK_SPLIT=n
 ```
@@ -92,4 +92,4 @@ copy build\right\zephyr\zmk.uf2 E:\zmk.uf2
 ```
 
 
-btw I think west.yml and rgo.zmk.yml don't do anything because I build locally, that's some github shenanigans
+btw I think west.yml and rgo.zmk.yml don't do anything because I build locally, that's some github-specific shenanigans.

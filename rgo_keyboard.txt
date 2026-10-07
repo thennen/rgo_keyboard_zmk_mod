@@ -31,11 +31,7 @@ The led also flickers very noticably, which is annoying.
 
 Overall, I think r-go should to redesign this board to justify its price tag.
 
-
-
-
-nothing about
-this keyboard justifies the price tag
+nothing about this keyboard justifies the price tag
 
 I guess they mainly sell to enterprise customers
 who want to show they are doing something for ergonomics
