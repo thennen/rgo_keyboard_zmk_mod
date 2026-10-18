@@ -1,0 +1,31 @@
+#include <dt-bindings/recmac.h>
+
+// Six independent slots. The node names (rm_0 ... rm_5) are the keys in flash, so don't rename them.
+/ {
+    behaviors {
+        /omit-if-no-ref/ rm0: rm_0 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+        /omit-if-no-ref/ rm1: rm_1 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+        /omit-if-no-ref/ rm2: rm_2 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+        /omit-if-no-ref/ rm3: rm_3 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+        /omit-if-no-ref/ rm4: rm_4 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+        /omit-if-no-ref/ rm5: rm_5 {
+            compatible = "zmk,behavior-recorded-macro";
+            #binding-cells = <1>;
+        };
+    };
+};

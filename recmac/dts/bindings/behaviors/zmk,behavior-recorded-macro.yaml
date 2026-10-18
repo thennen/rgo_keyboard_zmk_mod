@@ -1,0 +1,5 @@
+description: Record a key sequence at runtime, keep it in flash, and play it back
+
+compatible: "zmk,behavior-recorded-macro"
+
+include: one_param.yaml

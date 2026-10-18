@@ -1,0 +1,8 @@
+# Makes this repo a Zephyr module so the record-and-play behavior in recmac/ gets built.
+# GitHub Actions picks this up automatically; local builds pass the repo root in ZMK_EXTRA_MODULES.
+name: rgo-recmac
+build:
+  cmake: recmac
+  kconfig: recmac/Kconfig
+  settings:
+    dts_root: recmac

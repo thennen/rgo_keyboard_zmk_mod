@@ -10,9 +10,21 @@ To get firmware:
 2. Open the finished run in the Actions tab, download the `firmware` zip at the bottom
 3. Unzip, put a half into bootloader mode, copy its `.uf2` onto the drive that appears
 
-Note: `local_macros.dtsi` is not in git, so cloud builds get the no-op fallback for lmacro1/lmacro2. Build locally (below) if you need those.
 
 To upgrade ZMK later, bump `revision` for both zmk and zmk-unicode in `config/west.yml` and the `@v0.3` in the workflow. (v0.4+ is Zephyr 4.1: the board becomes `nice_nano//zmk` in `build.yaml`.)
+
+
+# Recorded macros
+
+The six keys of the far-left macro column are record-and-play slots, stored in the keyboard's flash so they survive reboots and reflashing.
+
+- **Record:** Fn + slot key (use the right Fn for the top two keys; left Fn shares their matrix column), type the sequence, Fn + slot key again to stop and save. Keys aren't sent to the computer while recording, so the keyboard seems dead until you stop.
+- **Play:** slot key alone.
+- **Erase:** record an empty sequence (Fn + slot key twice). `settings_reset` also erases them.
+- Up to 64 keystrokes per slot.
+- Only the left half needs reflashing for changes here; it does all the recording.
+
+The code is in `recmac/` (a small Zephyr module; `zephyr/module.yml` at the repo root makes the build pick it up). Settings like max length and playback speed are in `recmac/Kconfig`.
 
 
 # tl;dr: How to compile and flash when environment is already set up
@@ -22,7 +34,7 @@ Put keyboard into bootloader mode (left half: Fn-1, right half: RCtrl-7), then i
 set PATH=%PATH%;"C:\Users\t\anaconda3\Scripts";"C:\QMK_MSYS\mingw64\bin"
 subst Q: "C:\Users\t\Proton Drive\My files\github\rgo_wireless"
 cd desktop\zmk\app
-west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=rgo_left -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode"
+west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=rgo_left -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode;Q:/"
 copy build\left\zephyr\zmk.uf2 G:\zmk.uf2
 ```
 
@@ -80,10 +92,10 @@ subst Q: "C:\Users\t\Proton Drive\My files\github\rgo_wireless"
 
 for a split build
 ```
-west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=rgo_left -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode"
+west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=rgo_left -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode;Q:/"
 ```
 ```
-west build -d build/right -p -b nice_nano_v2 -- -DSHIELD=rgo_right -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode"
+west build -d build/right -p -b nice_nano_v2 -- -DSHIELD=rgo_right -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode;Q:/"
 ```
 
 
