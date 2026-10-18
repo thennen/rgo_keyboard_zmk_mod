@@ -34,11 +34,6 @@ ZMK on a nice!nano fixes all of this: every key is programmable, both halves are
 
 <p align="center">
   <img src="pics/signal-2024-09-16-105716_003.jpeg" width="49%" alt="Stock right board K900-RIGHT, connectors only">
-  <img src="pics/signal-2024-09-16-105716_006_0.jpeg" width="40%" alt="The cut cable stubs at the top of each half">
-</p>
-<p align="center">
-  <img src="pics/signal-2024-09-16-105716_004_0.jpeg" width="49%" alt="Right half opened, with the stock battery and passive board">
-  <img src="pics/signal-2024-09-16-105716_005_0.jpeg" width="49%" alt="Left half opened, with the stock control board">
 </p>
 
 
@@ -50,6 +45,10 @@ Each half gets an adapter PCB with:
 - a 2-pin battery header, here for a 600 mAh 502040 LiPo, a big upgrade over the stock 230 mAh
 
 The KiCad project, Gerbers and ready-to-order zips (`rgo_nicenano_left.zip`, `rgo_nicenano_right.zip`) are in [`rgo_nice!nano/`](rgo_nice!nano/). The PCBs reuse the stock mounting holes, and the inter-half cable is removed entirely.
+
+> **Known PCB mistakes (current revision):**
+> - The nice!nano's ground isn't connected to the battery's ground. Add a jumper wire between them.
+> - On the right-hand board, the mounting hole is slightly out of place. Filing it a bit makes it fit.
 
 Fitting notes:
 - The case's inner space is about 6 mm deep and 21 mm tall in the flat part. The usable length is about 150 mm in the left half and 135 mm in the right half.
