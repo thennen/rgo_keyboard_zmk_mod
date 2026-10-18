@@ -60,8 +60,6 @@ Fitting notes:
 - The nice!nano fits inside easily, but it doesn't line up with the stock USB-C cutout because of the angle. The right half has no cutout at all, so expect to cut new openings.
 - Socket headers are too tall for the space, even Mill-Max "super low profile" at 4 mm.
 
-<p align="center"><img src="pinout-v2.png" width="70%" alt="nice!nano v2 pinout"></p>
-
 
 ### Opening the case
 
@@ -79,6 +77,7 @@ The ZMK config is in [`config/boards/shields/rgo/`](config/boards/shields/rgo/),
 The membrane matrix (8 rows × 12 columns on the left, 8 × 10 on the right) was reverse-engineered with the `reverse_engineer_key_matrix*.py` and `capture_keys.py` scripts. They flash a test keymap that gives every matrix position a unique keycode, then record which key on the board produces which code. The resulting mapping is the `matrix-transform` in `rgo.dtsi`.
 
 Keymap highlights (`rgo.keymap`):
+- **Enter on the right half of the spacebar.** This was one of the most important reasons for the mod, since the stock firmware can't remap the two spacebar halves separately.
 - **Fn layer:** Bluetooth profiles, bootloader (left: Fn+1, right: the key labeled RCtrl +7), soft-off, media keys, Print Screen, Insert and more.
 - **Unicode** via [zmk-unicode](https://github.com/urob/zmk-unicode), using WinCompose.
 - **Recorded macros** on the far-left column (see below).
