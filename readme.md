@@ -3,23 +3,22 @@
 This is a hardware and firmware mod of the commercially available R-Go split wireless keyboard. The stock electronics are replaced with a [nice!nano v2](https://nicekeyboards.com/nice-nano/) in each half, running [ZMK](https://zmk.dev/) firmware. The result is a truly wireless split, with no cable between the halves and fully programmable keys.
 
 <p align="center">
-  <img src="pics/signal-2025-09-21-200906_003.jpeg" width="49%" alt="Left half after the mod: adapter PCB with nice!nano footprint and a 600 mAh battery">
-  <img src="pics/signal-2025-09-21-200906_002.jpeg" width="49%" alt="Right half after the mod: adapter PCB with nice!nano footprint and a 600 mAh battery">
+  <img src="pics/signal-2026-10-18-15-16-59-431.jpg" width="90%" alt="The finished keyboard: two separate wireless halves on adhesive tenting stands">
 </p>
-<p align="center"><i>Both halves after the mod: a custom adapter PCB plugs into the stock membrane ribbon, with a nice!nano and its own 600 mAh battery on each side.</i></p>
 
 
 ## Why
 
-The R-Go is the best low-profile, non-mechanical split keyboard I've found: thin, compact and comfortable. The stock version has some annoying limitations though:
+This replaces my [UltraErgo](https://github.com/thennen/ultraergo), which finally died after a decade or so and is no longer on the market. The R-Go isn't as nice, but it's currently the best low-profile, non-mechanical split keyboard you can buy: thin, compact and comfortable. The stock version has some annoying limitations though:
 
 - **The halves are joined by a hardwired cable**, even on the "wireless" model. Only the connection to the PC is Bluetooth. The cable is also poorly made: a light tug pulls the outer insulation off and exposes the conductors.
 - **No real remapping.** The halves of the split spacebar can't be mapped separately, and important keys like Print Screen hide behind Fn.
 - **The macro column** on the far left triggers key combinations internally, and a whole key is spent on disabling it.
 - **USB is power-only**, so the keyboard can't work over a cable, for example in the BIOS or boot menu.
 - **A tiny 230 mAh battery**, even though the case has plenty of room for a bigger one.
+- **No tenting.** It's not really "ergo" without it.
 
-ZMK on a nice!nano fixes all of this: every key is programmable, both halves are wireless, and USB works for typing and flashing.
+ZMK on a nice!nano fixes the electronics side: every key is programmable, both halves are wireless, and USB works for typing and flashing. For tenting, I stuck adhesive tenting stands from AliExpress on the bottom of each half.
 
 
 ## The stock hardware
@@ -43,6 +42,12 @@ Each half gets an adapter PCB with:
 - a 20-pin, 1.0 mm FFC connector (TE 2-84952-0) for the stock membrane ribbon
 - a nice!nano v2 footprint
 - a 2-pin battery header, here for a 600 mAh 502040 LiPo, a big upgrade over the stock 230 mAh
+
+<p align="center">
+  <img src="pics/signal-2025-09-21-200906_003.jpeg" width="49%" alt="Left half after the mod: adapter PCB with nice!nano footprint and a 600 mAh battery">
+  <img src="pics/signal-2025-09-21-200906_002.jpeg" width="49%" alt="Right half after the mod: adapter PCB with nice!nano footprint and a 600 mAh battery">
+</p>
+<p align="center"><i>Inside, after the mod: a custom adapter PCB plugs into the stock membrane ribbon, with a nice!nano and its own 600 mAh battery on each side.</i></p>
 
 The KiCad project, Gerbers and ready-to-order zips (`rgo_nicenano_left.zip`, `rgo_nicenano_right.zip`) are in [`rgo_nice!nano/`](rgo_nice!nano/). The PCBs reuse the stock mounting holes, and the inter-half cable is removed entirely.
 
