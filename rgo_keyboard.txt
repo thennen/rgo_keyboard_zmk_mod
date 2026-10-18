@@ -1,4 +1,4 @@
-Title:  I hate that we live in a world where I am going to keep this keyboard.
+I hate that we live in a world where I am going to keep this keyboard.
 
 In my opinion this keyboard is obscenely overpriced, but is sadly the best split, low-profile, non-mechanical keyboard currently on the market.
 
@@ -31,8 +31,6 @@ The led also flickers very noticably, which is annoying.
 
 Overall, I think r-go should to redesign this board to justify its price tag.
 
-nothing about this keyboard justifies the price tag
-
 I guess they mainly sell to enterprise customers
 who want to show they are doing something for ergonomics
 and are not price sensitive
@@ -54,8 +52,7 @@ the left side has the control board (100 mm x 24 mm x 1 mm)
 1/8 inch holes
 chip is HS6620 308XSDM 1VL0102 , used in low-end smart watches
 which might be a knockoff of the nRF52x series EBT SoCs. 
-could say it is "inspired"
-(company HunterSun, changed name to OnMicro, all links broken, shady chinese manufacturer)
+(company HunterSun, changed name to OnMicro, all links broken, shady manufacturer)
 some guy on the internet says "they only provide the SDK to companies that are willing to sign an NDA with them"
 https://archive.org/details/hs6620d-data-sheet-v30/mode/2up
 https://github.com/rbaron/HS6620D-smartwatch-reveng?tab=readme-ov-file could be useful
