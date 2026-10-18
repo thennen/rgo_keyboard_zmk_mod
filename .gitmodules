@@ -1,3 +1,6 @@
 [submodule "zmk-unicode"]
 	path = zmk-unicode
 	url = https://github.com/urob/zmk-unicode
+[submodule "nice-nano-kicad"]
+	path = nice-nano-kicad
+	url = https://github.com/bstiq/nice-nano-kicad
