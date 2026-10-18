@@ -1,0 +1,18 @@
+# Tells GitHub Actions which ZMK (and modules) to build against.
+# Pinned to v0.3 (Zephyr 3.5), which matches the local build setup in readme.md.
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    - name: urob
+      url-base: https://github.com/urob
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: v0.3
+      import: app/west.yml
+    - name: zmk-unicode
+      remote: urob
+      revision: v0.3 # keep in step with the zmk revision above
+  self:
+    path: config

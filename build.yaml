@@ -1,0 +1,8 @@
+# Which firmware files GitHub Actions builds. Each entry becomes one .uf2 in the "firmware" artifact.
+include:
+  - board: nice_nano_v2
+    shield: rgo_left
+  - board: nice_nano_v2
+    shield: rgo_right
+  - board: nice_nano_v2
+    shield: settings_reset

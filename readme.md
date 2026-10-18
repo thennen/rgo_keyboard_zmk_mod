@@ -1,3 +1,20 @@
+# Easiest: build on GitHub Actions (no local toolchain needed)
+
+Every push to GitHub builds the firmware in the cloud. Three files drive it:
+- `.github/workflows/build.yml`: runs ZMK's reusable build workflow (pinned to v0.3)
+- `build.yaml`: which board/shield combos to build (left, right, settings_reset)
+- `config/west.yml`: which ZMK version and modules (zmk-unicode) to build against
+
+To get firmware:
+1. Push (or on GitHub: Actions tab > pick the workflow > "Run workflow")
+2. Open the finished run in the Actions tab, download the `firmware` zip at the bottom
+3. Unzip, put a half into bootloader mode, copy its `.uf2` onto the drive that appears
+
+Note: `local_macros.dtsi` is not in git, so cloud builds get the no-op fallback for lmacro1/lmacro2. Build locally (below) if you need those.
+
+To upgrade ZMK later, bump `revision` for both zmk and zmk-unicode in `config/west.yml` and the `@v0.3` in the workflow. (v0.4+ is Zephyr 4.1: the board becomes `nice_nano//zmk` in `build.yaml`.)
+
+
 # tl;dr: How to compile and flash when environment is already set up
 
 Put keyboard into bootloader mode (left half: Fn-1, right half: RCtrl-7), then in cmd.exe:
@@ -6,7 +23,7 @@ set PATH=%PATH%;"C:\Users\t\anaconda3\Scripts";"C:\QMK_MSYS\mingw64\bin"
 subst Q: "C:\Users\t\Proton Drive\My files\github\rgo_wireless"
 cd desktop\zmk\app
 west build -d build/left -p -b nice_nano_v2 -- -DSHIELD=rgo_left -DZMK_CONFIG="Q:/config" -DZMK_EXTRA_MODULES="Q:/zmk-unicode"
-copy build\left\zephyr\zmk.uf2 E:\zmk.uf2
+copy build\left\zephyr\zmk.uf2 G:\zmk.uf2
 ```
 
 
@@ -92,4 +109,4 @@ copy build\right\zephyr\zmk.uf2 E:\zmk.uf2
 ```
 
 
-btw I think west.yml and rgo.zmk.yml don't do anything because I build locally, that's some github-specific shenanigans.
+btw `config/west.yml` and `build.yaml` are only used by the GitHub Actions build; local builds ignore them.
